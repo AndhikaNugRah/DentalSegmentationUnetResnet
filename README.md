@@ -2,39 +2,59 @@
 Biomedical image processing often involves tasks like localization, where each pixel in an image needs a class label assigned. Traditionally, this might involve training a network in a sliding-window fashion. However, this approach has limitations:
 
 **1.Limited Localization:** Patch-based training with a sliding window might not capture long-range dependencies within the image, hindering precise localization.
+
 **2.Data Imbalance:** Training with patches can lead to a much larger volume of training data compared to the number of whole images, which can skew the training process.
 
 **U-Net** addresses these challenges by offering a convolutional neural network architecture specifically designed for image segmentation. Its key features include:
 **1.U-Shaped Architecture:** This structure allows for efficient feature extraction through contracting paths (encoder) and precise localization through expansive paths (decoder) with skip connections.
+
 **2.Skip Connections:** These connections directly copy information from the encoder to the decoder at corresponding resolutions. This preserves spatial details crucial for accurate localization, even after down-sampling in the encoder.
 
 **ResNet**, specifically ResNet-34, is a frequently used backbone architecture for U-Net. It offers several advantages:
 
 **1.Mitigating Vanishing Gradients** by utilizing skip connections that jump over some layers, ResNet helps address the vanishing gradient problem, a common challenge in training very deep networks.
+
 **2.Deep Network Training** This architecture allows for training deeper networks compared to traditional architectures, leading to significant performance improvements in various image segmentation tasks.
+
 **3.Simplicity and Scalability** ResNet-34 is known for its balanced design, offering both simplicity and the ability to be scaled to handle more complex tasks.
 
 On this chance I will share my experiment when I using Unet-Resnet34 with :
 1.Unet-Resnet34 (batch size: 32)
+
 2.Unet-Resnet34 (batch size: 64)
+
 Hyperparameter : 
+
 -Input Size: 256 x 512
+
 -Batch Size: 32 & 64
+
 -Optimizer: Adam
+
 -Learning Rate: 1e-3
+
 -Scheduler: Reduce On Plateau
+
 -Factor: 0.5
+
 -Patience: 5
+
 -Early Stopping: Patience 20
 
 Then, change Hyperparameter to :
+
 -Learning Rate: 5e-4
+
 -Scheduler: Reduce On Plateau
+
 -Factor: 0.2
+
 -Patience: 10
 
 Using same model 
+
 3.Unet-Resnet34 (batch size: 32)
+
 4.Unet-Resnet34 (batch size: 64)
 
 **Metrics Evaluation**
