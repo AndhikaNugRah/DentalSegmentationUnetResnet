@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Dental X-ray</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .background-gradient {
+            background: linear-gradient(135deg, #E0F7FA, #80DEEA);
+        }
+        .drop-zone {
+            position: relative;
+            border: 2px dashed #93c5fd; /* warna biru terang */
+            border-radius: 0.5rem;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .drop-zone:hover {
+            background-color: #e0f2fe; /* warna latar belakang saat hover */
+        }
+        .drop-zone input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .drop-zone img {
+            max-height: 150px;
+            margin-top: 1rem;
+            display: none;
+        }
+    </style>
+</head>
+<body class="background-gradient flex items-center justify-center min-h-screen">
+    <div class="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 class="text-3xl font-bold mb-6 text-center text-blue-700">Upload Dental X-ray</h1>
+        <form id="upload-form" class="space-y-4" enctype="multipart/form-data">
+            <div id="drop-zone" class="drop-zone">
+                <input type="file" id="file-input" name="file" accept="image/*" required>
+                <div class="flex flex-col items-center justify-center space-y-2">
+                    <p class="text-sm text-blue-600">
+                        <span class="font-medium">Click to upload</span> or drag and drop
+                    </p>
+                    <p class="text-xs text-blue-500">PNG, JPG up to 10MB</p>
+                </div>
+                <img id="preview-image" alt="Image Preview">
+            </div>
+            <button type="submit" class="w-full bg-blue-700 text-white py-2 rounded-lg hover:bg-blue-800">Upload</button>
+        </form>
+        <img id="output-image" alt="Predicted Image" class="mt-6 hidden w-full rounded-lg">
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
