@@ -19,11 +19,11 @@ Biomedical image processing often involves tasks like localization, where each p
 **3.Simplicity and Scalability** ResNet-34 is known for its balanced design, offering both simplicity and the ability to be scaled to handle more complex tasks.
 
 On this chance I will share my experiment when I using Unet-Resnet34 with :
-1.Unet-Resnet34 (batch size: 32)
+**1.Unet-Resnet34 (batch size: 32)**
 
-2.Unet-Resnet34 (batch size: 64)
+**2.Unet-Resnet34 (batch size: 64)**
 
-Hyperparameter : 
+**Hyperparameter :**
 
 -Input Size: 256 x 512
 
@@ -41,7 +41,7 @@ Hyperparameter :
 
 -Early Stopping: Patience 20
 
-Then, change Hyperparameter to :
+**Then, Hyperparameter-2 :**
 
 -Learning Rate: 5e-4
 
